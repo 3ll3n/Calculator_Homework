@@ -22,6 +22,7 @@ public class AnswerActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        String answer = extras.getString("answer");
-        answer_textview.setText(answer);
+        int value = extras.getInt("answer");
+        answer_textview.setText(value);
+    }
 }

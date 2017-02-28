@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class CalculatorActivity extends AppCompatActivity {
     EditText firstNumEditText;
@@ -25,12 +26,12 @@ public class CalculatorActivity extends AppCompatActivity {
         calc = new Calculator();
     }
 
-    public void onShakeButtonClicked(View button) {
-//        int answer = calc.addNumbers(1, 2);
-//
-//        Intent intent = new Intent(CalculatorActivity.this, AnswerActivity.class);
-//        intent.putExtra("answer", answer);
-//
-//        startActivity(intent);
+    public void onButtonClicked(View button) {
+        int answer = calc.addNumbers();
+
+        Intent intent = new Intent(CalculatorActivity.this, AnswerActivity.class);
+        intent.putExtra("answer", (int) answer);
+
+        startActivity(intent);
     }
 }

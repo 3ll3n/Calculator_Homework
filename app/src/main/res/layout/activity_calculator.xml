@@ -28,7 +28,7 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:onClick="onShakeButtonClicked"
+        android:onClick="onButtonClicked"
         android:id="@+id/shake_btn"
         android:text="Add numbers together!"
         android:layout_marginTop="25dp"
