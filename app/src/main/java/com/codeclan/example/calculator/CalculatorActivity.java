@@ -26,11 +26,11 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     public void onShakeButtonClicked(View button) {
-//        int answer = calc.addNumbers();
+//        int answer = calc.addNumbers(1, 2);
 //
 //        Intent intent = new Intent(CalculatorActivity.this, AnswerActivity.class);
 //        intent.putExtra("answer", answer);
 //
 //        startActivity(intent);
-//    }
+    }
 }
