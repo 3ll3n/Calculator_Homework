@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_calculator"
     android:layout_width="match_parent"
@@ -12,27 +13,52 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/num1_edittext"
+        android:id="@+id/number1EditText"
+        android:inputType="number"
         android:hint="Enter your first number"
         android:textSize="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
 
     <EditText
-        android:id="@+id/num2_edittext"
+        android:id="@+id/number2EditText"
         android:hint="Enter your second number"
         android:textSize="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:onClick="onButtonClicked"
-        android:id="@+id/shake_btn"
-        android:text="Add numbers together!"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="25dp"
+        android:onClick="onCalcButtonClick"
+        android:id="@+id/addBtn"
+        android:text="+"
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="onCalcButtonClick"
+        android:id="@+id/subtractBtn"
+        android:text="-"
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="onCalcButtonClick"
+        android:id="@+id/multiplyBtn"
+        android:text="*"
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="onCalcButtonClick"
+        android:id="@+id/divideBtn"
+        android:text="/"
+        android:textSize="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

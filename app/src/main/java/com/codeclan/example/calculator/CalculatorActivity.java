@@ -9,9 +9,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class CalculatorActivity extends AppCompatActivity {
-    EditText firstNumEditText;
-    EditText secondNumEditText;
-    Button shakeButton;
+    EditText number1Text;
+    EditText number2Text;
+    Button addBtn;
+    Button subBtn;
+    Button multBtn;
+    Button dvdBtn;
+
     Calculator calc;
 
     @Override
@@ -19,18 +23,41 @@ public class CalculatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
-        firstNumEditText = (EditText)findViewById(R.id.num1_edittext);
-        secondNumEditText = (EditText)findViewById(R.id.num2_edittext);
-        shakeButton = (Button)findViewById(R.id.shake_btn);
+        number1Text = (EditText)findViewById(R.id.number1EditText);
+        number2Text = (EditText)findViewById(R.id.number2EditText);
+        addBtn = (Button)findViewById(R.id.addBtn);
+        subBtn = (Button)findViewById(R.id.subtractBtn);
+        multBtn = (Button)findViewById(R.id.multiplyBtn);
+        dvdBtn = (Button)findViewById(R.id.divideBtn);
 
         calc = new Calculator();
+
     }
 
-    public void onButtonClicked(View button) {
-        int answer = calc.addNumbers();
+    public void onCalcButtonClick(View view) {
+        int num1 = Integer.parseInt(number1Text.getText().toString());
+        int num2 = Integer.parseInt(number2Text.getText().toString());
+        int result = 0;
+        switch (view.getId()) {
+            case R.id.addBtn:
+                result = calc.add(num1, num2);
+                break;
+
+            case R.id.subtractBtn:
+                result = calc.subtract(num1, num2);
+                break;
+
+            case R.id.multiplyBtn:
+                result = calc.subtract(num1, num2);
+                break;
+
+            case R.id.divideBtn:
+                result = calc.divide(num1, num2);
+                break;
+        }
 
         Intent intent = new Intent(CalculatorActivity.this, AnswerActivity.class);
-        intent.putExtra("answer", (int) answer);
+        intent.putExtra("answer", result);
 
         startActivity(intent);
     }
